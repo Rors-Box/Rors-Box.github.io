@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#2455d8">
+  <meta name="description" content="每天的交易复盘、持仓、成交和次日计划。分开记录当时依据与事后结果，让经验可以回看。">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="复盘簿">
+  <meta name="robots" content="noindex,nofollow">
+  <link rel="manifest" href="/manifest.webmanifest">
+  <link rel="icon" href="/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/icon-192.png">
+  <link rel="stylesheet" href="/style.css">
+  <title>交易复盘簿</title>
+</head>
+<body>
+  <a class="skip" href="#main">跳至复盘内容</a>
+  <aside class="sidebar">
+    <a class="brand" href="#" aria-label="交易复盘簿首页"><img src="/icon.svg" alt="" width="36" height="36"><span>交易复盘簿<small>把每一笔，变成经验</small></span></a>
+    <nav id="desktop-nav" aria-label="主要导航"></nav>
+    <div class="archive"><span class="aside-title">回看日期</span><div id="date-list"></div></div>
+    <div class="side-foot"><span class="status-dot"></span><span id="connectivity">收盘数据，非实时行情</span><button class="plain" id="install-side">添加到主屏幕</button></div>
+  </aside>
+  <div class="app">
+    <header class="topbar"><span class="mobile-brand"><img src="/icon.svg" width="27" height="27" alt="">复盘簿</span><span class="breadcrumb">我的交易 / <strong id="breadcrumb">每日复盘</strong></span><div class="tools"><button class="icon-button" id="privacy" aria-label="隐藏金额" title="隐藏金额"></button><button class="quiet" id="export">导出备份</button><button class="quiet" id="print">打印</button><button class="install-button" id="install">添加到主屏幕</button></div></header>
+    <main id="main" tabindex="-1"><div class="loading">正在打开你的复盘记录…</div></main>
+    <footer class="footer">只比较已知信息，不用事后涨跌重写当时。<span>收盘复盘 · 数据有缺口时明确标记</span></footer>
+  </div>
+  <nav class="mobile-nav" id="mobile-nav" aria-label="手机导航"></nav>
+  <dialog id="install-dialog"><form method="dialog"><button class="dialog-close" aria-label="关闭">×</button></form><img src="/icon-192.png" width="56" height="56" alt="复盘簿图标"><h2>把复盘簿放到主屏幕</h2><p id="install-message"></p><ol id="install-steps"></ol><p class="muted">从图标打开可使用独立窗口。首次联网打开后，已读内容可离线回看；新记录仍需联网更新。</p><button class="primary" id="native-install" hidden>安装复盘簿</button></dialog>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <noscript>复盘簿需要启用 JavaScript 才能切换日期和展示交易记录。</noscript>
+  <script src="/app.js" defer></script>
+</body>
+</html>
