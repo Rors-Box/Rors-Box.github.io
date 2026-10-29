@@ -8,7 +8,7 @@ function marketResearch(r){
  return `<section id="market-research" data-research-version="${esc(x.version)}">`+
  researchHeading('市场结构与风格','先看市场给谁回报，再评价自己的持仓')+
  `<section class="panel research-summary"><h3>${esc(x.structure.headline)}</h3><ul>${x.structure.facts.map(s=>`<li>${esc(s)}</li>`).join('')}</ul><p class="small-copy">${esc(x.structure.style)}</p></section>`+
- researchHeading('板块高低切换','同花顺行业：涨幅前七与成交额前三的并集；与昨日同口径比较')+
+ researchHeading('板块高低切换','同花顺行业：重点涨跌、成交额与持仓相关方向；与昨日同口径比较')+
  `<section class="panel">${sectorTable(x.sectors)}<p class="small-copy">宽度=上涨/(上涨+下跌)，不含平盘；“昨日缺失”不推算轮动。连续出现只代表仍在候选表，不能自动解释为持续上涨。</p><details class="research-details"><summary>概念方向另表：避免把行业与概念混为一个排名</summary>${sectorTable(x.concepts)}<p class="small-copy">概念快照覆盖100个板块，排名限当前覆盖；昨日缺失，不能假设它们今日首次启动。概念有重叠，成交额不加总。</p></details></section>`+
  researchHeading('今天最强的方向',x.best.name)+
  `<section class="panel"><p>${esc(x.best.reason)}</p><div class="core-roles">${x.best.roles.map(v=>`<div><b>${esc(v.role)}</b><p>${esc(v.text)}</p></div>`).join('')}</div><p class="small-copy">${esc(x.best.contrast)}</p></section>`+
